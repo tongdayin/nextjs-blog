@@ -34,7 +34,8 @@ img {
     display: block;
 }
 
-h1,
+/* 下面的样式会影响 markdown 转 html 之后的样式展示 */
+/* h1,
 h2,
 p,
 ul {
@@ -49,4 +50,4 @@ ul {
 button {
     padding: 0.5rem 1rem;
     font-weight: bold;
-}
+} */
