@@ -52,7 +52,8 @@ export default function Layout({ children, home }) {
                         <Link href='/'>
                             <Image
                                 priority
-                                src={`${process.env.BASE_PATH}/images/profile.jpg`}
+                                // src={`${process.env.BASE_PATH}/images/profile.jpg`}
+                                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/profile.jpg`}
                                 className={utilStyles.borderCircle}
                                 // Because Next.js does not have access to remote files during the build process
                                 // you'll need to provide the width, height and optional blurDataURL props manually:

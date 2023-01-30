@@ -20,3 +20,6 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
 ## eslint
 * 添加 lint 命令，执行 yarn lint，自动安装 eslint 相关依赖
+
+## .env 文件
+* .env 文件中的环境变量，如果在runtime时使用，需要以 NEXT_PUBLIC_ 开头
