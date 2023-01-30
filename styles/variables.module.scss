@@ -1,0 +1,10 @@
+$primary-color: #64ff00;
+
+:export {
+    primaryColor: $primary-color;
+}
+
+// 使用
+// import variables from '../styles/variables.module.scss'
+// 给组件添加color props:
+// ... color={variables.primaryColor} ...
