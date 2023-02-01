@@ -1,5 +1,8 @@
 This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
+## 新建一个项目
+* `npx create-next-app`
+
 ## 技术栈：
 * NEXT.js
 * CSS Modules

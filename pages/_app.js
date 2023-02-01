@@ -1,5 +1,7 @@
 // 全局样式入口
 import '../styles/global.css';
+// 全局 form 样式
+import '../styles/form.css';
 // 支持 Import styles from node_modules
 // import 'bootstrap/dist/css/bootstrap.css'
 // 全局统一布局
