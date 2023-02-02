@@ -1,11 +1,11 @@
 import Head from 'next/head';
-import Date from '../../components/date';
-import Layout from '../../components/layout';
+import Date from 'components/date';
+import Layout from 'components/layout';
 // 每页单独布局
-// import NestedLayout from '../../components/nested-layout' 
-import { getAllPostIds, getPostData } from '../../lib/posts';
+// import NestedLayout from 'components/nested-layout' 
+import { getAllPostIds, getPostData } from 'lib/posts';
 
-import utilStyles from '../../styles/utils.module.css';
+import utilStyles from 'styles/utils.module.css';
 
 // getStaticProps and getStaticPaths run only on the server-side and will never run on the client-side.
 // Moreover, these functions will not be included in the JS bundle for the browser.

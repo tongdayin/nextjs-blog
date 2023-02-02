@@ -1,9 +1,20 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Layout, { siteTitle } from '../components/layout';
-import Date from '../components/date';
-import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
+import Layout, { siteTitle } from '@/components/layout';
+import Date from 'components/date';
+import utilStyles from 'styles/utils.module.css';
+import { getSortedPostsData } from 'lib/posts';
+import dynamic from 'next/dynamic';
+
+const DynamicHeader = dynamic(() => import('@/components/header-default-exports'), {
+    loading: () => 'Loading...',
+    // To dynamically load a component on the client side, you can use the ssr option to disable server-rendering.
+    // This is useful if an external dependency or component relies on browser APIs like window.
+    // ssr: false,
+});
+const DynamicNamedHeader = dynamic(() =>
+    import('components/header-named-exports').then((mod) => mod.Header)
+);
 
 export default function Home({ allPostsData }) {
     return (
@@ -11,6 +22,9 @@ export default function Home({ allPostsData }) {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
+            <div>动态加载的Header：</div>
+            <DynamicHeader />
+            <DynamicNamedHeader />
             <section className={utilStyles.headingMd}>
                 <p>一只会飞的咩</p>
                 <p>
@@ -29,7 +43,7 @@ export default function Home({ allPostsData }) {
                             <small className={utilStyles.lightText}>
                                 <Date dateString={date} />
                             </small>
-                        </li>   
+                        </li>
                     ))}
                 </ul>
             </section>

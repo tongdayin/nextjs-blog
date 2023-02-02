@@ -1,7 +1,7 @@
 // Notice there is a loading skeleton
 
-// import useUser from '../lib/useUser';
-// import Layout from '../components/Layout';
+// import useUser from 'lib/useUser';
+// import Layout from 'components/Layout';
 
 // const Profile = () => {
 //     // Fetch the user client-side
@@ -22,3 +22,15 @@
 // };
 
 // export default Profile;
+
+export default function Test() {
+    return <h1>临时导出</h1>;
+}
+
+// 如果有 getServerSideProps 方法，yarn build 生成的就是js文件
+// .next/server/pages/csr-demo.js
+// export async function getServerSideProps(context) {
+//     return {
+//         props: {}, // will be passed to the page component as props
+//     };
+// }

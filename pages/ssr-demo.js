@@ -1,7 +1,7 @@
 // Notice there is not a loading skeleton
 
-// import withSession from '../lib/session';
-// import Layout from '../components/Layout';
+// import withSession from 'lib/session';
+// import Layout from 'components/Layout';
 
 // export const getServerSideProps = withSession(async function ({ req, res }) {
 //     const { user } = req.session;
@@ -31,3 +31,7 @@
 // };
 
 // export default Profile;
+
+export default function Test() {
+    return <h1>临时导出</h1>;
+}

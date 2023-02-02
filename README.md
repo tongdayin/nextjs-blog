@@ -20,6 +20,7 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 8. `npm install gray-matter` lets us parse the metadata in each markdown file.(解析固定格式的 markdown 文档头部的信息)
 9. `npm install remark remark-html`
 10. `npm install date-fns`
+11. `yarn add fuse.js` for fuzzy search
 
 ## eslint
 * 添加 lint 命令，执行 yarn lint，自动安装 eslint 相关依赖

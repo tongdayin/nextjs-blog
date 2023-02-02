@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        // The baseUrl configuration option allows you to import directly from the root of the project.
+        // for example: import Button from 'components/button'
+        "baseUrl": ".",
+        "paths": {
+            // alias
+            "@/components/*": ["components/*"]
+        }
+    }
+}
