@@ -33,4 +33,43 @@ module.exports = {
     },
     // 开启 source map（默认开发开启，生产关闭）
     // productionBrowserSourceMaps: true,
+    i18n: {
+        // These are all the locales you want to support in
+        // your application
+        locales: ['en-US', 'fr', 'nl-NL'],
+        // This is the default locale you want to be used when visiting
+        // a non-locale prefixed path e.g. `/hello`
+        defaultLocale: 'en-US',
+        // This is a list of locale domains and the default locale they
+        // should handle (these are only required when setting up domain routing)
+        // Note: subdomains must be included in the domain value to be matched e.g. "fr.example.com".
+        domains: [
+            // For example: if you have pages/blog.js the following urls will be available:
+            // example.com/blog
+            // www.example.com/blog
+            // example.fr/blog
+            // example.nl/blog
+            // example.nl/nl-BE/blog
+            {
+                // Note: subdomains must be included in the domain value to be matched
+                // e.g. www.example.com should be used if that is the expected hostname
+                domain: 'example.com',
+                defaultLocale: 'en-US',
+            },
+            {
+                domain: 'example.nl',
+                defaultLocale: 'nl-NL',
+                // specify other locales that should be redirected
+                // to this domain
+                locales: ['nl-BE'],
+            },
+            {
+                domain: 'example.fr',
+                defaultLocale: 'fr',
+                // an optional http field can also be used to test
+                // locale domains locally with http instead of https
+                http: true,
+            },
+        ],
+    },
 };
