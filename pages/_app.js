@@ -1,9 +1,11 @@
+import 'styles/vars.css';
 // 全局样式入口
 import 'styles/global.css';
-// 全局 form 样式
-import 'styles/form.css';
+// 全局 form demo 样式
+// import 'styles/form.css';
 // 支持 Import styles from node_modules
 // import 'bootstrap/dist/css/bootstrap.css'
+import 'antd/dist/reset.css';
 // 全局统一布局
 // import Layout from 'components/layout'
 import ErrorBoundary from 'components/ErrorBoundary';

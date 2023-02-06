@@ -1,0 +1,20 @@
+.headContainer {
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    white-space: nowrap;
+    color: var(--primaryColor);
+    justify-content: center;
+    & > svg {
+        fill: var(--primaryColor);
+    }
+}
+
+.text-disabled {
+    color: var(--textColorSecondary) !important;
+}
