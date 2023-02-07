@@ -25,6 +25,8 @@ export default function Home({ allPostsData }) {
             <div>动态加载的Header：</div>
             <DynamicHeader />
             <DynamicNamedHeader />
+            <span>测试不导出 getStaticProps 方法页面：</span>
+            <Link href={`/tailwindcss`} className='hover:text-blue-600'>Tailwind Page</Link>
             <section className={utilStyles.headingMd}>
                 <p>一只会飞的咩</p>
                 <p>
@@ -38,7 +40,7 @@ export default function Home({ allPostsData }) {
                 <ul className={utilStyles.list}>
                     {allPostsData.map(({ id, date, title }) => (
                         <li className={utilStyles.listItem} key={id}>
-                            <Link href={`/posts/${id}`}>{title}</Link>
+                            <Link href={`/posts/${id}`} className='hover:text-blue-600'>{title}</Link>
                             <br />
                             <small className={utilStyles.lightText}>
                                 <Date dateString={date} />
