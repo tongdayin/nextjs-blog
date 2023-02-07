@@ -32,3 +32,18 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
 ## 其他
 1. Bug：如果文件名称是 tailwind.js，则 vscode 中 Tailwind CSS IntelliSense 插件提示失效
+2. 修改控制台默认 node 版本 `nvm alias default v16`
+
+## 问题
+1. ErrorBoundary.js 文件中，为什么需要 import React ?
+2. yarn start 之后，执行 yarn dev，之后在执行 yarn start 报错！yarn dev 为什么会改变 .next 文件夹里面的文件？
+
+## 部署
+三种可能性：
+1. 不要对 Next.js 使用任何服务器端渲染，使用 next export 构建，并将输出与 CRA 的静态输出完全相同。（当前使用）
+2. 将整个前端托管在 Vercel 上，指向我们的后端（托管在 GCP 中）。 -- TODO
+3. 为 Next.js 服务器编写一个自定义的 Docker 镜像，并将其与我们的后端和其他服务一起托管在 GCP 中。 -- TODO（后期推荐使用）
+利弊分析：
+1. `next export` 优点：要设置的工作量几乎为 0（与 CRA 输出相同）；缺点：不支持服务器端的渲染；
+2. `托管 Vercel` 优点：只需最少的设置；缺点：没有官方对 Yarn2 的支持，无法轻松连接到数据库以实现更快的服务器端渲染；
+3. `自定义的 Docker 镜像` 优点：支持服务端渲染，最大的灵活性，由于 GCP 的上的托管，后端 API 调用将会非常快，可以对所需/使用的资源进行最细粒度的控制；缺点：所需的最多设置：Vercel 提供了一些示例，但它们并不是开箱即用；Kubernetes 路由 / 网络、扩展等都需要自定义设置；
