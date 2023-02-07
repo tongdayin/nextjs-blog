@@ -33,6 +33,7 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 ## 其他
 1. Bug：如果文件名称是 tailwind.js，则 vscode 中 Tailwind CSS IntelliSense 插件提示失效
 2. 修改控制台默认 node 版本 `nvm alias default v16`
+3. 三步：`scp ./next-blog.zip webuser@123.60.28.212:/srv/www/` 电脑本地文件拷贝到服务器（s-km1） -> `unzip dist.zip` 选All -> `sudo nginx -s reload`
 
 ## 问题
 1. ErrorBoundary.js 文件中，为什么需要 import React ?
