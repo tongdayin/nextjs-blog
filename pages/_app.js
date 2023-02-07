@@ -1,11 +1,13 @@
 import 'styles/vars.css';
-// 全局样式入口
-import 'styles/global.css';
 // 全局 form demo 样式
 // import 'styles/form.css';
 // 支持 Import styles from node_modules
 // import 'bootstrap/dist/css/bootstrap.css'
+// antd reset.css 中的 默认 font-family: sans-serif; 需要被覆盖掉
+// 在 styles/global.css中，使用 tailwind 中的 font-family 覆盖
 import 'antd/dist/reset.css';
+// 全局样式入口
+import 'styles/global.css';
 // 全局统一布局
 // import Layout from 'components/layout'
 import ErrorBoundary from 'components/ErrorBoundary';

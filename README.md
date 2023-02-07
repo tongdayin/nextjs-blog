@@ -29,3 +29,6 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
 ## .env 文件
 * .env 文件中的环境变量，如果在runtime时使用，需要以 NEXT_PUBLIC_ 开头
+
+## 其他
+1. Bug：如果文件名称是 tailwind.js，则 vscode 中 Tailwind CSS IntelliSense 插件提示失效
