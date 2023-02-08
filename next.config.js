@@ -10,7 +10,7 @@ module.exports = {
         SKIP_BUILD_STATIC_GENERATION: false,
     },
     images: {
-        unoptimized: true,
+        unoptimized: true, // 这里是 next export 必须配置的？？？
     },
     // 配置saas编译器
     // sassOptions: {
