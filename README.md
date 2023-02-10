@@ -13,6 +13,7 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 * Tailwind
 * Sass
 * antd5.0
+* react-intl
 
 ## 命令
 
@@ -35,6 +36,92 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 11. `yarn add fuse.js` for fuzzy search
 12. `npm install antd --save`
 13. `npm install --save @ant-design/icons`
+14. 国际化 `yarn add react-intl` `yarn add -D babel-plugin-formatjs`
+
+## formatjs 常用使用方式
+
+> id 命名规则 `componentName.someUniqueIdWithInComponent` ，比如 `app.hello_world`
+
+* IntlProvider
+* FormattedDate
+* FormattedTime
+* FormattedRelativeTime
+* FormattedNumber
+* FormattedPlural
+* FormattedMessage
+* FormattedHTMLMessage
+
+* Using React API `<FormattedMessage/>`（推荐使用）
+
+```JavaScript
+import {FormattedMessage} from 'react-intl';
+<FormattedMessage
+  description="A message" // Description should be a string literal
+  defaultMessage="My name is {name}" // Message should be a string literal
+  values={
+    {
+      name: userName,
+    } // Values should be an object literal, but not necessarily every value inside
+  }
+/>
+```
+
+* Using imperative API `intl.formatMessage`
+
+> Tip: The intl object should be reused as much as possible for performance.
+
+```JavaScript
+// useIntl hook: Once you've declared your IntlProvider, you can get access to the intl object via calling this hook in your functional React component
+import React from 'react'
+import {useIntl, FormattedDate} from 'react-intl'
+
+const FunctionComponent: React.FC<{date: number | Date}> = ({date}) => {
+  const intl = useIntl()
+  // intl.formatMessage({ id : hello})
+  return (
+    <span title={intl.formatDate(date)}>
+      <FormattedDate value={date} />
+    </span>
+  )
+}
+
+export default FunctionComponent
+```
+
+```JavaScript
+// injectIntl HOC: In class-based React components, you can wrap them with the injectIntl HOC and intl should be available as a prop.
+import React, {PropTypes} from 'react'
+import {injectIntl, FormattedDate} from 'react-intl'
+
+const FunctionalComponent = props => {
+  const {
+    date,
+    intl, // Injected by `injectIntl`
+  } = props
+  return (
+    <span title={intl.formatDate(date)}>
+      <FormattedDate value={date} />
+    </span>
+  )
+}
+
+export default injectIntl(FunctionalComponent)
+```
+
+```JavaScript
+// Method must be exactly `intl.formatMessage`
+intl.formatMessage(
+  {
+    description: 'A message', // Description should be a string literal
+    defaultMessage: 'My name is {name}', // Message should be a string literal
+  },
+  {
+    name: userName,
+  } // Values should be an object literal, but not necessarily every value inside
+)
+```
+
+> The lifecycle of the intl object is typically tied to the locale & the list of messages that it contains, which means when you switch locale, this object should be recreated.
 
 ## eslint
 
